@@ -1,45 +1,27 @@
-# datastax-example-template
-A short few sentences describing what is the purpose of the example and what the user will learn
+# Geospatial Demo
+This is short demo which shows how to find all the UK postcode within a certain area. This area can be a postcode
+or a longitude/latitude combination.
 
-e.g.
-This application shows how to use configure your NodeJs application to connect to DDAC/Cassandra/DSE or an Apollo database at runtime.
-
-Contributors: A listing of contributors to this repository linked to their github profile
+Contributor(s): [Patrick Callaghan](https://github.com/PatrickCallaghan)
 
 ## Objectives
-A list of the top objectives that are being demonstrated by this sample
+* To demonstrate how Cassandra and Datastax can be used to solve IoT data management issues.
 
-e.g.
-* To demonstrate how to specify at runtime between a standard (DSE/DDAC/C*) client configuration and an Apollo configuration for the same application.
-  
 ## Project Layout
-A list of key files within this repo and a short 1-2 sentence description of why they are important to the project
-
-e.g.
-* app.js - The main application file which contains all the logic to switch between the configurations
+* [SchemaSetup.java](/src/main/java/com/datastax/demo/SchemaSetup.java) - Sets up the datastax_postcode_demo schema.
+* [postcodes_new.csv](postcodes_new.csv) - File with postcode data.
 
 ## How this Works
-A description of how this sample works and how it demonstrates the objectives outlined above
+The postcode data is loaded in Cassandra first, then a Solr core is created that allows various spatial queries to be performed.
 
 ## Setup and Running
 
 ### Prerequisites
-The prerequisites required for this application to run
 
-e.g.
-* NodeJs version 8
-* A DSE 6.7 Cluster
-* Schema added to the cluster
+* Java 8
+* A DSE cluster
+* Maven to compile and run code
 
 ### Running
-The steps and configuration needed to run and build this application
 
-e.g.
-To run this application use the following command:
-
-`node app.js`
-
-This will produce the following output:
-
-`Connected to cluster with 3 host(s) ["XX.XX.XX.136:9042","XX.XX.XX.137:9042","XX.XX.XX.138:9042"]`
-
+*TO DO*
