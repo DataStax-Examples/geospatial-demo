@@ -1,0 +1,22 @@
+<schema name="postcode_checker" version="1.1">
+  <types>
+  	<fieldType name="string" class="solr.StrField">
+	</fieldType>		
+	<fieldType name="text" class="solr.TextField">
+	  		<analyzer>      		  	      		
+	    		<tokenizer class="solr.StandardTokenizerFactory"/>																					
+	  		</analyzer>
+		</fieldType>
+	<fieldType name="date" class="solr.TrieDateField" precisionStep="0" positionIncrementGap="0"/>
+	<fieldType name="location"  class="solr.LatLonType" subFieldSuffix="_coordinate"/>
+	<fieldType name="tdouble" class="solr.TrieDoubleField" precisionStep="8" omitNorms="true" positionIncrementGap="0"/>
+		
+   </types>
+  <fields>
+    <field name="lon_lat" type="location" indexed="true"  stored="true"  multiValued="false" />
+    <dynamicField name="*_coordinate"  type="tdouble" indexed="true"  stored="false"/>
+
+	<field indexed="true" multiValued="false" name="post_code" stored="true" type="string"/>
+	</fields>
+	<uniqueKey>post_code</uniqueKey>
+</schema>
