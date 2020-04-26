@@ -78,12 +78,12 @@ Next we want to add the distance from the query point to the results and also so
 
 Finally we are going to change the search area to be a bounded box area which has a radius of 1km. This is sometimes better for maps that are relatively square. For this we change the filtering query from `{!geofilt}` to `{!bbox}`
 
-![Image of Postcode lookup for a bounded box filter]
-(https://raw.githubusercontent.com/PatrickCallaghan/images/master/PostCodeBBox.png)
-
+![Image of Postcode lookup for a bounded box filter](images/PostCodeBBox.png)
 
  * **Remove the schema**
 
  To remove the tables and the schema, run the following.
 
-    mvn clean compile exec:java -Dexec.mainClass="com.datastax.demo.SchemaTeardown"
+     mvn clean compile exec:java -Dexec.mainClass="com.datastax.demo.SchemaTeardown"
+
+ For more on Spatial Search in Solr please visit https://lucene.apache.org/solr/guide/6_6/spatial-search.html
