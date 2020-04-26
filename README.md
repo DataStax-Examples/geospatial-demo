@@ -65,14 +65,13 @@ To do this in CQL run the following
 
 Next we do a spatial query to filter out anything that is outside of 1km from lon/lat co-ordinates that we found from looking up SW209AQ. Now we use check the spatial checkbox and fill in the details - also we use the 'fq' field to declare we are geo filtering. The 'q' field is now set back to '*:*'
 
-![Image of Postcode lookup within Distance]
-(https://raw.githubusercontent.com/PatrickCallaghan/images/master/PostCodeDist1.png)
+![Image of Postcode lookup within Distance](images/PostCodeDist1.png)
 
 To do this in CQL run the following
 
 	select * from postcodes where solr_query = '{"q": "*:*", "fq": "{!geofilt sfield=lon_lat pt=51.404970234124800,-.206445841245690 d=1}"}';
 
-Next we want to add the distance from the query point to the results and also sort them by the nearest postcodes. For this we add the 'geodist() asc' to the sort field and in the field 'fl' we will return 'post_code, lon_lat and geodist()'
+Next we want to add the distance from the query point to the results and also sort them by the nearest postcodes. For this we add the `geodist() asc` to the sort field and in the field `fl` we will return `post_code`, `lon_lat and `geodist()`
 
 ![Image of Postcode lookup within Distance sorted]
 (https://raw.githubusercontent.com/PatrickCallaghan/images/master/PostCodeDist1Sorted.png)
